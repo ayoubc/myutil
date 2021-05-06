@@ -604,7 +604,10 @@ def os_cpu():
 
 def os_platform_ip():
     ### IP
-    pass
+    import socket
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(('8.8.8.8', 1))
+    return s.getsockname()[0]
 
 
 def os_memory():

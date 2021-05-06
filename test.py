@@ -159,9 +159,10 @@ def test1():
 
    
    ###################################################################################
-   from utilmy import os_platform_os
+   from utilmy import os_platform_os, os_platform_ip
    assert os_platform_os() == sys.platform
-
+   ip = os_platform_ip()
+   assert len(ip.split('.')) == 4
 
    
 def test2(*args):
